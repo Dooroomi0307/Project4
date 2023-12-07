@@ -5,7 +5,7 @@
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
         crossorigin="anonymous" 
         referrerpolicy="no-referrer" />
-        <link href="./style/style.css" rel="stylesheet">
+        <link href="../style/style.css" rel="stylesheet">
         <title>Navbar</title>
     </head>
     <body>
