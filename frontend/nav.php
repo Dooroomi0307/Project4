@@ -11,7 +11,7 @@
     <body>
         <div class="navbar">
             <div class="logo">
-                Empawrium
+                Comp Homes.
             </div>
             <ul class="links">
                 <li><a href="./about.php">About</a> </li>
