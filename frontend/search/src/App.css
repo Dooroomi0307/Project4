@@ -4,8 +4,62 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
+body{
+  margin:auto;
+}
+#property-name{
+  width:400px;
+  height:40px;
+  padding:20px;
+}
+select{
+  height:40px;
+  margin-left:10px;
+}
+.range-container{
+  margin-left:10px;
+  align-self: center;
+  display:flex;
+  flex-direction:row;
+}
 
 
+.range-container input{
+  margin-right:10px;
+  margin-left:20px;
+}
+.filter{
+  margin:auto;
+  display:flex;
+  flex-direction:row;
+}
+
+.container{
+  display:flex;
+  flex-direction:column;
+  margin-top:100px;
+}
+.result{
+  margin-top:50px;
+}
+.result-table{
+  background-color: #cad2e4;
+  margin:auto;
+  width:700px;
+  text-align:center;
+}
+/*Property Card*/
+th{
+  background-color: #a0adbe;
+  padding:10px;
+}
+td{
+  padding:10px;
+}
+table{
+  background-color: #c0d4ee;
+
+}
 
 /*Nav bar styling */
 
