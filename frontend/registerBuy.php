@@ -1,4 +1,4 @@
-<!--Dream Realtor Registration HTML File, allowing new buyers to register. -->
+<!-- Realtor Registration HTML File, allowing new buyers to register. -->
 <?php
 	$errors = array();
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -22,7 +22,7 @@
 	}
     $phoneNum = trim($_POST["phoneNum"]);
     if (!preg_match("/^\d{3}-\d{3}-\d{4}$/", $phoneNum)) {
-        $errors[] = "Please with the required format xxx-xxx-xxxx.";
+        $errors[] = "Please enter your preferred phone number with the required format xxx-xxx-xxxx.";
     }
     $username = trim($_POST["username"]);
     $password = trim($_POST["password"]);
@@ -39,7 +39,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//Dli XHTML 1.1//EN" "http://www.w3.org/ul/xhtml11/Dli/xhtml11.dli">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>Dream House Realtor Registration</title>
+		<title>Realtor Registration</title>
 		<link href="./register.css" type="text/css" rel="stylesheet" />
 	</head>
 	<body>
@@ -86,7 +86,8 @@
                 </form>
 			<!--form end-->
 <?php	if (!empty($errors)) {
-		echo '<p>Please fix the following errors:</p>';
+		echo '<div style="color: red;">';
+		echo '<p>Please fix the following errors before resubmitting your application:</p>';
 		echo '<ul>';
 		foreach ($errors as $error) {
 			echo '<li>' . $error . '</li>';
