@@ -24,7 +24,7 @@
 	}
 	//Validate the Phone Number
     $phoneNum = trim($_POST["phoneNum"]);
-    if (!preg_match("/^\d{3}-\d{3}-\d{4}$/", $_SESSION['phoneNum'])) {
+    if (!preg_match("/^\d{3}-\d{3}-\d{4}$/", $phoneNum)) {
         $phoneError = "Please enter with the required format xxx-xxx-xxxx.   ";
     }
 	//Validate the new Login Register
