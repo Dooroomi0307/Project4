@@ -1,6 +1,5 @@
 <!--Realtor Registration HTML File, allowing new buyers to register. -->
 <?php
-	session_start();
 	$errors = false;
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	//Validate the first and last name
