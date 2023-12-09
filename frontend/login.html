@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+</style>
+</head>
+<body>
+
+<h2>Login Here</h2>
+
+
+  <div class="imgcontainer">
+    <img src="./resources/person.png" alt="user" class="user">
+  </div>
+
+  <div class="container">
+	<form action="process_login.php" method="post">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required><br>
+	   <label for="username">Password:</label>
+      <input type="text" id="password" name="password" required><br>
+      <input type="checkbox" name="remember" value="1">
+	  <label for="remember">Remember me</label>
+
+
+      <input type="submit" value="Submit">
+    </form>
+
+    <p>New user? <a href="registerBuy.php">Register here</a></p>
+  </div>
+
+</body>
+</html>
