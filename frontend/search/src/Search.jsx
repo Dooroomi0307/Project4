@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import App from './App.css';
+import { Modal, Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import PropertyDetails from './propertyDetails';
+import './Search.css';
+import { FaAngleRight } from "react-icons/fa";
 
 function Search() {
   const [data, setData] = useState([]);
@@ -10,15 +15,17 @@ function Search() {
   const [bathFilter, setBathFilter] = useState('');
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
+  const [selectedProperty, setSelectedProperty] = useState(null);
 
   useEffect(() => {
     // Fetch properties table data
     fetch('http://localhost:8081/properties')
-      .then(res => res.json())
-      .then(data => setData(data))
-      .catch(err => console.log(err));
+      .then((res) => res.json())
+      .then((data) => setData(data))
+      .catch((err) => console.log(err));
   }, []);
 
+  //set event
   const handleSearch = event => {
     setSearchQuery(event.target.value);
   };
@@ -47,14 +54,18 @@ function Search() {
     setMaxPrice(event.target.value);
   };
 
-  const priceRangeMatch = property => {
+  const priceRangeMatch = (property) => {
     if (minPrice && maxPrice) {
       return property.price >= parseInt(minPrice) && property.price <= parseInt(maxPrice);
     }
     return true;
   };
 
-  const filteredData = data.filter(property => {
+  const openPropertyDetails = (property) => {
+    setSelectedProperty(property);
+  };
+
+  const filteredData = data.filter((property) => {
     const nameMatch = property.name.toLowerCase().includes(searchQuery.toLowerCase());
     const typeMatch = !typeFilter || property.type.toLowerCase() === typeFilter.toLowerCase();
     const cityMatch = !cityFilter || property.city.toLowerCase() === cityFilter.toLowerCase();
@@ -128,42 +139,68 @@ function Search() {
             />
             <span>{maxPrice}</span>
           </div>
-        
-      </div>
-        
-        
+        </div>
 
-      {/* Search Result */}
-      <div className="result">
-        <table className="result-table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Location</th>
-              <th>Type</th>
-              <th>Bed</th>
-              <th>Bath</th>
-              <th>Price</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredData.map((property, i) => (
-              <tr key={i}>
-                <td>{property.name}</td>
-                <td>{property.city}</td>
-                <td>{property.type}</td>
-                <td>{property.bed}</td>
-                <td>{property.bath}</td>
-                <td>{property.price}</td>
+        {/* Search Result */}
+        <div className="result">
+          <table className="result-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Type</th>
+                <th>Bed</th>
+                <th>Bath</th>
+                <th>Price(monthly)</th>
+                <th></th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      
+            </thead>
+            <tbody>
+              {filteredData.map((property, i) => (
+                <tr key={i}>
+                  <td>{property.name}</td>
+                  <td>{property.city}</td>
+                  <td>{property.type}</td>
+                  <td>{property.bed}</td>
+                  <td>{property.bath}</td>
+                  <td>${property.price}</td>
+                  <td>
+                    <Button id="details-btn" onClick={() => openPropertyDetails(property)}>
+                    <FaAngleRight />
+                    </Button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <Modal show={!!selectedProperty} onHide={() => setSelectedProperty(null)}>
+          <Modal.Header closeButton>
+            <Modal.Title>Property Details</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            {selectedProperty && (
+              <div>
+                <h4>{selectedProperty.name}</h4>
+                <p>City: {selectedProperty.city}</p>
+                <p>Name: {selectedProperty.name}</p>
+                <p>Location: {selectedProperty.city}</p>
+                <p>Type: {selectedProperty.type}</p>
+                <p>Bed: {selectedProperty.bed}</p>
+                <p>Bath: {selectedProperty.bath}</p>
+                <p>Price (monthly): ${selectedProperty.price}</p>
+              </div>
+            )}
+          </Modal.Body>
+          <Modal.Footer>
+            <Button id="close-btn" onClick={() => setSelectedProperty(null)}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </div>
     </body>
-    
   );
 }
 

@@ -23,15 +23,19 @@ select{
   flex-direction:row;
 }
 
-
 .range-container input{
   margin-right:10px;
   margin-left:20px;
+}
+.range-container label{
+  display:block;
+  margin-top:5px;
 }
 .filter{
   margin:auto;
   display:flex;
   flex-direction:row;
+  align-items:center;
 }
 
 .container{
@@ -43,22 +47,45 @@ select{
   margin-top:50px;
 }
 .result-table{
-  background-color: #cad2e4;
   margin:auto;
   width:700px;
   text-align:center;
 }
+
+#details-btn{
+  color:black;  
+  background-color: white;
+  border:none;
+}
+
+#close-btn{
+  background-color: #045ccf;
+  border:none;
+}
 /*Property Card*/
+.result-table {
+  width: 100%; /* Ensure the table spans the container width */
+  border-collapse: separate; /* Separate border model for better spacing */
+  border-spacing: 0 30px; /* Add spacing between table rows */
+}
 th{
-  background-color: #a0adbe;
+  background-color: #d2d7df;
   padding:10px;
+  
+}
+tr{
+  margin-bottom: 50px;
+}
+tbody tr{
+  box-shadow: 5px 3px 8px rgb(194, 194, 194);
+
 }
 td{
-  padding:10px;
+  padding-top:50px;
+  padding-bottom: 50px;
 }
-table{
-  background-color: #c0d4ee;
-
+.card{
+  border: #d2d7df;
 }
 
 /*Nav bar styling */
