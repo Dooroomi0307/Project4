@@ -11,13 +11,13 @@
     <body>
         <div class="navbar">
             <div class="logo">
-                Comp Homes.
+                <li><a href="../frontend/home.php">Comp Homes.</a></li>
             </div>
             <ul class="links">
-                <li><a href="./about.php">About</a> </li>
-                <li><a href="./services.php">Services</a> </li>
-                <li><a href="./staff.php">Our Staff</a> </li>
-                <li><a href="./register.php">Sign-up</a> </li>
+                <li><a href="../frontend/about.php">About</a> </li>
+                <li><a href="../frontend/services.php">Services</a> </li>
+                <li><a href="../frontend/staff.php">Our Staff</a> </li>
+                <li><a href="../frontend/register.php">Sign-up</a> </li>
             </ul>
         </div>
     </body>

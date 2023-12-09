@@ -4,6 +4,7 @@ const cors = require('cors');
 
 const app = express();
 app.use(cors());
+app.use(express.static('./properties_img'));
 
 const db = mysql.createConnection({
     host: "localhost",
@@ -23,8 +24,6 @@ app.get('/properties',(req, res) => {
         return res.json(data);
     })
 })
-
-
 
 app.listen(8081, () => {
     console.log("listening");

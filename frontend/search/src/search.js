@@ -3,8 +3,11 @@ import { Modal, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import PropertyDetails from './propertyDetails';
+import Navbar from './navbar.js';
 import './Search.css';
 import { FaAngleRight } from "react-icons/fa";
+import { FaRegHeart } from "react-icons/fa";
+import { FiTrash2 } from "react-icons/fi";
 
 function Search() {
   const [data, setData] = useState([]);
@@ -16,6 +19,7 @@ function Search() {
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
   const [selectedProperty, setSelectedProperty] = useState(null);
+  const [wishlist, setWishlist] = useState([]);
 
   useEffect(() => {
     // Fetch properties table data
@@ -76,8 +80,46 @@ function Search() {
     return nameMatch && typeMatch && cityMatch && bedMatch && bathMatch && priceMatch;
   });
 
+  const Wishlist = ({ properties, removeFromWishlist, openPropertyDetails }) => {
+    return (
+      <div className="wishlist">
+        <h4><FaRegHeart /> Wishlist</h4>
+        <ul>
+          {properties.map((property, index) => (
+            <li key={index} onClick={() => openPropertyDetails(property)}>
+              {property.name}, {property.city}{' '}
+              <button onClick={(e) => { e.stopPropagation(); removeFromWishlist(index); }}>
+                <FiTrash2 />
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  };
+
+  const openPropertyFromWishlist = (property) => {
+    setSelectedProperty(property);
+  };
+
+  const addToWishlist = (property) => {
+    const existsInWishlist = wishlist.some((item) => item.id === property.id);
+    if (!existsInWishlist) {
+      setWishlist([...wishlist, property]);
+    } else {
+      alert('This property is already in the wishlist.');
+    }
+  };
+
+  const removeFromWishlist = (index) => {
+    const updatedWishlist = wishlist.filter((_, i) => i !== index);
+    setWishlist(updatedWishlist);
+  };
+
+  //Display
   return (
     <body>
+      <Navbar />
       <div className="container">
         <div className="filter">
         <input
@@ -138,42 +180,53 @@ function Search() {
               onChange={handleMaxPriceChange}
             />
             <span>{maxPrice}</span>
-          </div>
+          </div>         
         </div>
-
-        {/* Search Result */}
-        <div className="result">
-          <table className="result-table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Location</th>
-                <th>Type</th>
-                <th>Bed</th>
-                <th>Bath</th>
-                <th>Price(monthly)</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              {filteredData.map((property, i) => (
-                <tr key={i}>
-                  <td>{property.name}</td>
-                  <td>{property.city}</td>
-                  <td>{property.type}</td>
-                  <td>{property.bed}</td>
-                  <td>{property.bath}</td>
-                  <td>${property.price}</td>
-                  <td>
-                    <Button id="details-btn" onClick={() => openPropertyDetails(property)}>
-                    <FaAngleRight />
-                    </Button>
-                  </td>
+        
+        <div className="sub-container">
+          {/* Search Result */}
+          <div className="result">
+            <table className="result-table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Name</th>
+                  <th>Location</th>
+                  <th>Type</th>
+                  <th>Bed</th>
+                  <th>Bath</th>
+                  <th>Price(monthly)</th>
+                  <th></th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {filteredData.map((property, i) => (
+                  <tr key={i}>
+                    <td><img src={`http://localhost:8081/${property.img}`}/></td>
+                    <td>{property.name}</td>
+                    <td>{property.city}</td>
+                    <td>{property.type}</td>
+                    <td>{property.bed}</td>
+                    <td>{property.bath}</td>
+                    <td>${property.price}</td>
+                    <td>
+                      <Button id="details-btn" onClick={() => openPropertyDetails(property)}>
+                      <FaAngleRight />
+                      </Button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
         </div>
+            <div className="wishlist-container">
+              
+            <Wishlist
+              properties={wishlist}
+              removeFromWishlist={removeFromWishlist}
+              openPropertyDetails={openPropertyFromWishlist}
+            />
+            </div>
 
         <Modal show={!!selectedProperty} onHide={() => setSelectedProperty(null)}>
           <Modal.Header closeButton>
@@ -181,7 +234,8 @@ function Search() {
           </Modal.Header>
           <Modal.Body>
             {selectedProperty && (
-              <div>
+              <div className="modal-container">
+                <img id="modal-img" src={`http://localhost:8081/${selectedProperty.img}`}/>
                 <h4>{selectedProperty.name}</h4>
                 <p>City: {selectedProperty.city}</p>
                 <p>Name: {selectedProperty.name}</p>
@@ -190,6 +244,9 @@ function Search() {
                 <p>Bed: {selectedProperty.bed}</p>
                 <p>Bath: {selectedProperty.bath}</p>
                 <p>Price (monthly): ${selectedProperty.price}</p>
+                  <Button id="wishlist-btn" onClick={() => addToWishlist(selectedProperty)}>
+                    <FaRegHeart /> Wishlist
+                  </Button>
               </div>
             )}
           </Modal.Body>
@@ -199,7 +256,9 @@ function Search() {
             </Button>
           </Modal.Footer>
         </Modal>
+        </div>  
       </div>
+        
     </body>
   );
 }
