@@ -119,7 +119,6 @@ function Search() {
   //Display
   return (
     <body>
-      <Navbar />
       <div className="container">
         <div className="filter">
         <input

@@ -40,9 +40,10 @@
             </div>
             <div id="Slogan-container">
             <p id="Slogan">Where your homebuying experience is as smooth as possible</p>
-            <a href="../frontend/src/search.js">Start Searching</a>
+            <a href="./search/src/search.html">Start Searching</a>
         </div>
         </div>
     </body>
     <script src="script.js"></script><br>
+    <script src="./search/src/index.js"></script><br>
 </html>
