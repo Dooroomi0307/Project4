@@ -18,9 +18,9 @@
     justify-content: space-between;
 }
 
-.logo{
-    font-size: 20px;
-    font-weight: bold;
+.home{
+  text-decoration: none;
+  color: black;
 }
 
 .navbar ul li{
@@ -176,18 +176,24 @@ img {
   font-size: 20px;
 }
 
-#sign-button{
-  border-radius: 4px;
+.searching{
+  border-radius: 8px;
   border: 2px solid black;
   width: 150px;
   height: 45px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
-  margin-top: 16px;
+  text-align: center;
+  display: block;
+  margin: 20px auto;
+  align-items: center;
+  text-decoration: none;
+  padding-top: 10px;
+  color: #29ab87;
 }
 
-#sign-button:hover{
-  background-color:#009688;
+.searching:hover{
+  background-color: #717171;
 }
 
 /*Staff Page */
