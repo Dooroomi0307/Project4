@@ -10,7 +10,7 @@ include_once("session.php");
         <link rel="stylesheet" href="./Search.css">
     </head>
     <body>
-        <button>Logout</button>
+        <a href="../../logout.php">Logout</a>
             <div class="search-container">
             <img class="ty-img" src="./ty.gif" alt="ty">
             <div id="root"></div>
