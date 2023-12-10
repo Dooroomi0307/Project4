@@ -7,6 +7,10 @@
 body{
   margin:auto;
 }
+.ty-img{
+  margin:auto;
+  padding:50px;
+}
 #property-name{
   width:400px;
   height:40px;
@@ -41,7 +45,7 @@ select{
 .container{
   display:flex;
   flex-direction:column;
-  margin-top:300px;
+  margin-top:50px;
   
 }
 .result{

@@ -8,6 +8,7 @@ import './Search.css';
 import { FaAngleRight } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { FiTrash2 } from "react-icons/fi";
+import thankYou from "./ty.gif";
 
 function Search() {
   const [data, setData] = useState([]);
@@ -119,7 +120,9 @@ function Search() {
   //Display
   return (
     <body>
+      
       <div className="container">
+      <img className="ty-img" src={thankYou} alt="ty"></img>
         <div className="filter">
         <input
             id="property-name"
