@@ -11,7 +11,7 @@
     <body>
         <div class="navbar">
             <div class="logo">
-                <li><a href="../frontend/home.php">Comp Homes.</a></li>
+                <a class="home" href="../frontend/home.php">Comp Homes.</a>
             </div>
             <ul class="links">
                 <li><a href="../frontend/about.php">About</a> </li>
