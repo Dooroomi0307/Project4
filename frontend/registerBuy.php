@@ -110,7 +110,7 @@
 					<!--input username & password, displaying error otherwise-->					
 					<h5> Please Enter Your Intended Username and Password</h5>
                     <div class="inputgroup">
-                        <input type="text" name="username" placeholder="Username" class="<?php echo isset($usernameError) ? 'error' : ''; ?> <?php echo isset($matchError) ? 'error' : ''; ?>" value="<?php echo isset($_POST["Username"]) ? $_POST["Username"] : ''; ?>">
+                        <input type="text" name="username" placeholder="Username" class="<?php echo isset($usernameError) ? 'error' : ''; ?> <?php echo isset($matchError) ? 'error' : ''; ?>" value="<?php echo isset($_POST["username"]) ? $_POST["username"] : ''; ?>">
 						<span class="error"><?php echo isset($usernameError) ? $usernameError : ''; ?></span>	
 						<span class="error"><?php echo isset($matchError) ? $matchError : ''; ?></span>												
                         <input type="text" name="password" placeholder="Password" class="<?php echo isset($passwordError) ? 'error' : ''; ?>"  value="<?php echo isset($_POST["password"]) ? $_POST["password"] : ''; ?>"> 
