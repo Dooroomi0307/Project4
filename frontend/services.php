@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Services page</title>
-        <link href="./style.css" rel="stylesheet">
+        <link rel="stylesheet" href="../style/style.css">
     </head>
     <body>
     <?php include './nav.php'?>
