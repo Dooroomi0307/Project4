@@ -1,8 +1,8 @@
 <?php
 //REMEMBER: USE YOUR OWN LOGIN WHEN UPLOADING TO SERVER
 $host = "localhost"; 
-$username = ""; 
-$password = ""; 
+$user = ""; 
+$pass = ""; 
 $dbname = "";
 
 // Create connection
@@ -28,7 +28,7 @@ $createTable = "CREATE TABLE IF NOT EXISTS userdata (
     Password VARCHAR(255) NOT NULL,
     Recommend VARCHAR(255) NOT NULL)";
 	
-if ($conn->query($createTableQuery) === TRUE) {
+if ($conn->query($createTable) === TRUE) {
     echo "Table created successfully\n";
 } else {
     echo "Error creating table: " . $conn->error . "\n";
