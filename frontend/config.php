@@ -1,5 +1,5 @@
 <?php
-
+	//NOTE: left this empty so it can be edited to fit everyone's own db, host, username, & password names. 
 	$host = "";
 	$database = "";
 	$username = "";
