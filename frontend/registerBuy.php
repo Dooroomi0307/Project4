@@ -59,7 +59,7 @@
 		('$firstName', '$lastName', '$street', '$city', '$state', '$zipCode', '$phoneNum', '$email', '$userID', '$encryptPass', '$recommend')";
 
 		if ($conn->query($insertData) === TRUE) {
-			header("location: login.html");
+			header("location: login.php");
 		} else {
 			echo "Error: " . $insertData . "<br>" . $conn->error;
 		}
