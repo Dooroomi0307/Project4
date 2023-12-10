@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>About Page</title>
-        <link href="./style.css" rel="stylesheet">
+        <link rel="stylesheet" href="../style/style.css">
     </head>
     <body>
     <?php include './nav.php'?>
