@@ -24,7 +24,7 @@ function Search() {
 
   useEffect(() => {
     // Fetch properties table data
-    fetch('http://localhost:8081/properties')
+    fetch('https://codd.cs.gsu.edu/~aadams109/WP/PW/PW4/createTable_properties.php')
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => console.log(err));
