@@ -6,6 +6,7 @@
 <title>Login</title>
 </head>
 <body>
+	<?php include './nav.php'?>
 
   <div class="container">
 	<h1>Login Here</h1>
