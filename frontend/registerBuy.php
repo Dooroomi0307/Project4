@@ -71,7 +71,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>Realtor Registration</title>
-		<link href="./register.css" type="text/css" rel="stylesheet" />
+		<link href="../style/register.css" type="text/css" rel="stylesheet" />
 	</head>
 	<body>
     <section>
