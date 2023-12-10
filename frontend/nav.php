@@ -5,7 +5,7 @@
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
         crossorigin="anonymous" 
         referrerpolicy="no-referrer" />
-        <link href="../style/style.css" rel="stylesheet">
+        <link href="../style/navstyle.css" rel="stylesheet">
         <title>Navbar</title>
     </head>
     <body>
@@ -17,7 +17,7 @@
                 <li><a href="../frontend/about.php">About</a> </li>
                 <li><a href="../frontend/services.php">Services</a> </li>
                 <li><a href="../frontend/staff.php">Our Staff</a> </li>
-                <li><a href="../frontend/register.php">Sign-up</a> </li>
+                <li><a href="../frontend/login.php">Login</a> </li>
             </ul>
         </div>
     </body>
