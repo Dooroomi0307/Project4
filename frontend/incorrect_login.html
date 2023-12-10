@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Login Page</title>
-  </head>
-  <body>
-    <h1>Login</h1>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../style/login.css" type="text/css" rel="stylesheet" />
+<title>Login</title>
+</head>
+<body>
+
+  <div class="container">
+	<h1>Login Here</h1>
+	
 	<div class="imgcontainer">
 		<img src="./resources/person.png" alt="user" class="user">
 	</div>
 	
-	<div class="container">
-		<h4>Invalid username or password</h4>
-		<form action="process_login.php" method="post">
-		<label for="username">Please enter a username:</label>
-		<input type="text" id="username" name="username" required><br>
-		<label for="username">Please enter a password:</label>
-		<input type="text" id="password" name="password" required><br>
-
-
+	<form action="process_login.php" method="post">
+		<div class="inputgroup">
+			<h4>Incorrect username or password</h4>
+			<label for="username">Username:</label>
+			<input type="text" id="username" name="username" required><br>
+			<label for="username">Password:</label>
+			<input type="text" id="password" name="password" required><br>
+		
+		</div>
+		
+		<input type="checkbox" name="remember" value="1">
+		<label for="remember">Remember me</label><br>
 		<input type="submit" value="Submit">
 		</form>
+    <p>New user? <a href="registerBuy.php">Register here</a></p>
+  </div>
 
-		<p>New user? <a href="registration.html">Register here</a></p>
-	</div>
-
-    <hr>
-  </body>
+</body>
 </html>
-
-
-
