@@ -1,9 +1,9 @@
 <?php
 //REMEMBER: USE YOUR OWN LOGIN WHEN UPLOADING TO SERVER
 $host = "localhost"; 
-$username = "hbae9"; 
-$password = "hbae9"; 
-$dbname = "hbae9";
+$username = ""; 
+$password = ""; 
+$dbname = "";
 
 // Create connection
 $conn = new mysqli($host, $user, $pass, $dbname);
