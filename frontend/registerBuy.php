@@ -1,7 +1,6 @@
 <!--Realtor Registration HTML File, allowing new buyers to register. -->
 <?php
 	//Connect to the database
-	//NOTE: left this empty so it can be edited to fit everyone's own db, host, username, & password names. 
 	require('config.php');
 	
 	$errors = false;
