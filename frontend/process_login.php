@@ -29,7 +29,7 @@ session_start();
 	
 	if(password_verify($password, $hash)){
 		$_SESSION['user'] = $username;
-		header("location: frontend/search/src/search.php");
+		header("location: ./search/src/search.php");
 	} else{
 		header("location: incorrect_login.html");
 	}
