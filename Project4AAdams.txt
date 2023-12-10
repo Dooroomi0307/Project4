@@ -1,0 +1,16 @@
+https://github.com/Dooroomi0307/Project4 <--Github Link 
+<-- Youtube Link 
+https://docs.google.com/presentation/d/14AT36KdVeLx46JaKH1CjGcr9JSa4QzTAX9ncg5ZAhCU/edit#slide=id.p <-- PPT Link
+ <-- Codd Link 
+<-- Youtube Link
+
+Project 4 - Real Estate w/React, JS, MySQL
+Milestone 1 Registration & Homepage -> Anna Adams & Aldin Karabegovic
+Milestone 2 Login -> Royce Lim & Nyasia Pratt
+Milestone 3 Buyer Dashboard -> Olivia Bae
+
+Project is an interactive real estate website selling to buyers using React, JS, and MySQL. 
+Key Components -
+- PHP Registration & Login with Form Validation 
+- Using MySQL to create database tables
+- React DOM for Interactive Buyer Dashboard
