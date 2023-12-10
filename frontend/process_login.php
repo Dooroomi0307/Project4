@@ -31,7 +31,7 @@ session_start();
 		$_SESSION['user'] = $username;
 		header("location: ./search/src/search.php");
 	} else{
-		header("location: incorrect_login.html");
+		header("location: incorrect_login.php");
 	}
 	
 ?>
