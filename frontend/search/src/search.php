@@ -2,11 +2,16 @@
 <html>
     <head>
         <title>Searching</title>
-        <link rel="stylesheet" href="../build/static/css/main.38407fd2.css">
+        <link rel="stylesheet" href="../build/static/css/main.a3d748b4.css">
+        <link rel="stylesheet" href="./Search.css">
     </head>
     <body>
         <button>Logout</button>
-        <div id="root"></div> <!-- This is where your React app will be rendered -->
-        <script src="../build/static/js/main.31d94e3b.js"></script>
+            <div class="search-container">
+            <img class="ty-img" src="./ty.gif" alt="ty">
+            <div id="root"></div>
+        </div>
+        
+        <script src="../build/static/js/main.c11aafd2.js"></script>
     </body>
 </html>

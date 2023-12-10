@@ -120,9 +120,7 @@ function Search() {
   //Display
   return (
     <body>
-      
       <div className="container">
-      <img className="ty-img" src={thankYou} alt="ty"></img>
         <div className="filter">
         <input
             id="property-name"

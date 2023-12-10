@@ -7,9 +7,12 @@
 body{
   margin:auto;
 }
+.search-container{
+  display: flex;
+  flex-direction: column;
+}
 .ty-img{
   margin:auto;
-  padding:50px;
 }
 #property-name{
   width:400px;
