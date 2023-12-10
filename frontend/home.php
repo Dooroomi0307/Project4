@@ -40,7 +40,7 @@
             </div>
             <div id="Slogan-container">
             <p id="Slogan">Where your homebuying experience is as smooth as possible</p>
-            <a href="./search/src/search.php">Start Searching</a>
+            <a class="searching" href="./search/src/search.php">Start Searching</a>
         </div>
         </div>
     </body>
